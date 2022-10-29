@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/Login.css'
 import swAlert from 'sweetalert';
 import {  useNavigate } from 'react-router-dom';
@@ -33,20 +33,32 @@ export default function Login() {
                 const tokenUs = response.data.token
                 console.log(tokenUs)
                 localStorage.setItem("token", tokenUs)
-                navigate("/listado")
+                 navigate("/listado")
             })
 
     }
+
+    const tokenUs = localStorage.getItem("token")
+
+    useEffect(()=>{
+        if(tokenUs){
+            navigate("/listado")
+        }
+    }, [])
             
+
   return (
-    <div className='login-container'>
-    <form onSubmit={submitHandler}>
-        <div className='login-form'>
-            <input className='login-input' type="text" name="email" placeholder="example@gmail.com" />
-            <input className='login-input' type="password" name="password" placeholder="password" />
-            <button className='login-button' type='submit'>Send</button>
+    <>
+ 
+        <div className='login-container'>
+        <form onSubmit={submitHandler}>
+            <div className='login-form'>
+                <input className='login-input' type="text" name="email" placeholder="example@gmail.com" />
+                <input className='login-input' type="password" name="password" placeholder="password" />
+                <button className='login-button' type='submit'>Send</button>
+            </div>
+        </form>
         </div>
-    </form>
-    </div>
+    </>
   )
 }
