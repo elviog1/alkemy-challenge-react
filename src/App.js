@@ -1,5 +1,6 @@
 
 import { Route,Routes } from 'react-router-dom';
+import DetailMovie from './components/DetailMovie';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Listado from './components/Listado';
@@ -13,6 +14,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Login />}  />
         <Route path='/listado' element={<Listado />}  />
+        <Route path='/detail' element={<DetailMovie />}  />
+
       </Routes>
       <Footer />
     </>
