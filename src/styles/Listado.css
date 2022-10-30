@@ -1,0 +1,10 @@
+.listado{
+    min-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    background:linear-gradient(rgb(61, 62, 62),rgb(14, 14, 16));
+}
+
+.card{
+    margin: 10px 10px;
+}

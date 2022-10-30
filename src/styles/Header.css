@@ -1,0 +1,9 @@
+.header{
+    height: 10vh;
+    background:linear-gradient(rgb(61, 62, 62),rgb(14, 14, 16));
+    width: 100%;
+}
+.link{
+    font-weight: bold;
+    font-size: 25px;
+}
