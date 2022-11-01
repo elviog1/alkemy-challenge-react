@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../styles/bootstrap.min.css'
 import '../styles/Header.css'
 import Search from './Search'
-export default function Header() {
+export default function Header(props) {
   return (
     <div className='d-flex justify-content-between'>
 
@@ -16,8 +16,10 @@ export default function Header() {
                     <Link className='text-decoration-none link' to="/listado">Listado</Link>
                 </li>
                 <li className='list-group'>
-                    <Link  className='text-decoration-none link' to="/contacto">Contacto</Link>
+                    <Link  className='text-decoration-none link' to="/favoritos">Favoritos</Link>
+                    {props.favorite.length >0 && <><p className='text-success carrito'>{props.favorite.length}</p></>}
                 </li>
+
             </ul>
             <Search />
 

@@ -32,13 +32,13 @@ export default function Login() {
                 swAlert("Perfect!", "Logged successfully!", "success")
                 const tokenUs = response.data.token
                 console.log(tokenUs)
-                localStorage.setItem("token", tokenUs)
+                sessionStorage.setItem("token", tokenUs)
                  navigate("/listado")
             })
 
     }
 
-    const tokenUs = localStorage.getItem("token")
+    const tokenUs = sessionStorage.getItem("token")
 
     useEffect(()=>{
         if(tokenUs){

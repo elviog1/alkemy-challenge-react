@@ -6,10 +6,14 @@ import { useNavigate, Link } from 'react-router-dom'
 import '../styles/bootstrap.min.css'
 import '../styles/Listado.css'
 import swAlert from 'sweetalert';
-export default function Listado() {
-  const tokenUs = localStorage.getItem("token")
+export default function Listado(props) {
+
+
+
+  const tokenUs = sessionStorage.getItem("token")
   const navigate = useNavigate()
   const [movies, setMovies] = useState([])
+
   useEffect(() => {
     if (!tokenUs) {
       navigate("/")
@@ -29,7 +33,6 @@ export default function Listado() {
       
   }, [setMovies])
 
-  console.log(movies)
   
   return (
     <>
@@ -38,8 +41,14 @@ export default function Listado() {
           return (
             <div className='card ' style={{ width: "18rem" }} key={index}>
               <img className='card-img-top' src={"https://image.tmdb.org/t/p/w500/"+`${movie.poster_path}`} />
+              <div className='fav-div'>
+                <button onClick={props.addOrRemoveFromFavs}
+                 className='button-fav'
+                 data-id={movie.id}
+                 >{movie.hearth == true ? "❤" :"🖤"}</button>
+              </div>  
               <div className='card-body d-flex flex-column justify-content-between'>
-                <p className='card-title fs-4 fw-bold'>{movie.title}</p>
+                <h5 className='card-title fs-4 fw-bold'>{movie.title}</h5>
                 <p className='card-text fs-5'>{movie.overview.length > 100 ? movie.overview.substring(0,100) + "..." : movie.overview}</p>
                 <Link to={`/detail?id=${movie.id}` }className='card-button'>Detail</Link>
               </div>

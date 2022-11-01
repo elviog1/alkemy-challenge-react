@@ -8,3 +8,21 @@
 .card{
     margin: 10px 10px;
 }
+.resultado{
+    min-height: 80vh;
+}
+.button-fav{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fav-div{
+    display: flex;
+    justify-content: center;
+}

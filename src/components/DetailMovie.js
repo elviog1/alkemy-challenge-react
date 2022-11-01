@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useNavigate,useParams } from "react-router-dom"
 import '../styles/Detail.css'
 function DetailMovie (){
-    const token = localStorage.getItem("token")
+    const token = sessionStorage.getItem("token")
     const navigate = useNavigate()
     let query = new URLSearchParams(window.location.search)
     let movieID = query.get("id")
@@ -38,7 +38,10 @@ function DetailMovie (){
                             <p className="fs-4"><span className="fw-bold">Fecha de estreno: </span>{detailMovie.release_date}</p>
                             <p className="fs-4"><span className="fw-bold">Generos:</span> {detailMovie.genres.map(genre => <li key={genre.id}>{genre.name}</li>)}</p>
                             <p className="fs-4"><span className="fw-bold">Duracion:</span> {detailMovie.runtime} Min.</p>
-                            <p className="fs-4"><span className="fw-bold">Votacion:</span> {"⭐".repeat(detailMovie.vote_average)}</p>
+                            <p className="fs-4 fw-bold"><span className="fw-bold">Votacion:</span> {"⭐".repeat(detailMovie.vote_average)} 
+                            {Math.floor(detailMovie.vote_average) >5 ?
+                             <span className="green">{Math.floor(detailMovie.vote_average)}</span> :
+                             <span className="red">{Math.floor(detailMovie.vote_average)}</span>}/10</p>
                         </div>
                     </div>
         </>

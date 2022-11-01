@@ -1,0 +1,16 @@
+.listado{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.card{
+    margin: 10px 10px;
+}
+.resultado{
+    background:linear-gradient(rgb(61, 62, 62),rgb(14, 14, 16));
+    min-height: 80vh;
+}
+.transparent{
+    color: rgb(177, 172, 172);
+}

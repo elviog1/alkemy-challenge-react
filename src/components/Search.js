@@ -11,8 +11,8 @@ export default function Search() {
         
         if(SearchInput.length === 0){
             swAlert("Error!", "Ingrese el nombre de alguna pelicula!", "warning")
-        }else if(SearchInput.length <4){
-            swAlert("Sorry!", "Debe ingresar minimo 4 letras!", "warning")
+        }else if(SearchInput.length <2){
+            swAlert("Sorry!", "Debe ingresar minimo 2 letras!", "warning")
         }else{
             e.target.search.value = ""
             navigate(`/resultados?movie-title=${SearchInput}` )

@@ -2,3 +2,9 @@
     min-height: 80vh;
     background:linear-gradient(rgb(173, 175, 177),rgb(73, 73, 75));
 }
+.green{
+    color: rgb(13, 86, 13);
+}
+.red{
+    color: red;
+}
