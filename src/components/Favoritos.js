@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 export default function Favoritos(props) {
-  // const [favorite,setFavorite] = useState([])
-  console.log(props.favorite)
-  // useEffect(()=>{
-    // const favMovies = localStorage.getItem("favs") // arranco la app obteniendo los favs 
-    // let hearth = JSON.parse(favMovies)
-    // console.log(hearth)
-  //   if(favMovies){
-  //     let movies = JSON.parse(favMovies)
-  //     setFavorite(movies)
-  //   }
-  // },[])
+
+  const tokenUs = sessionStorage.getItem("token")
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!tokenUs) {
+      navigate("/")
+    }
+  }, [])
+
   return (
       <div className=' d-flex listado justify-content-center'>
         {props.favorite.length <1 && <p className='align-self-center text-danger fs-1'>No tienes ninguna pelicula agregada a favorito.</p>}

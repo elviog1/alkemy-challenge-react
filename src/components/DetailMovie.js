@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate,useParams } from "react-router-dom"
+import { Link, useNavigate,useParams } from "react-router-dom"
 import '../styles/Detail.css'
 function DetailMovie (){
     const token = sessionStorage.getItem("token")
@@ -30,8 +30,8 @@ function DetailMovie (){
         {!detailMovie && <h2 className="text-center">Cargando...</h2>}
         {detailMovie && 
             <>
-                    <div className="container-card d-flex">
-                        <img src={"https://image.tmdb.org/t/p/w500/"+`${detailMovie.poster_path}`} />
+                    <div className="container-card d-flex flex-wrap">
+                        <img className="detail-img" src={"https://image.tmdb.org/t/p/w500/"+`${detailMovie.poster_path}`} />
                         <div className="ms-3">
                             <h2 className="text-center fs-1 fw-bold">{detailMovie.title}</h2>
                             <p className="fs-4"><span className="fw-bold">Descripcion: </span> {detailMovie.overview}</p>
@@ -42,6 +42,7 @@ function DetailMovie (){
                             {Math.floor(detailMovie.vote_average) >5 ?
                              <span className="green">{Math.floor(detailMovie.vote_average)}</span> :
                              <span className="red">{Math.floor(detailMovie.vote_average)}</span>}/10</p>
+                    <Link className="volver" to="/">Volver</Link>
                         </div>
                     </div>
         </>

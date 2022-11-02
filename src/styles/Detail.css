@@ -8,3 +8,15 @@
 .red{
     color: red;
 }
+.volver{
+    color: rgb(6, 5, 82);
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+@media (max-width:320px){
+    .detail-img{
+        width: 320px;
+    }
+}

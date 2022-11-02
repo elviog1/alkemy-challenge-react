@@ -26,10 +26,16 @@ export default function Login() {
             swAlert("Error!", "Credential invalid", "warning")
             return;
         }
-        console.log("Conectado")
         axios.post("http://challenge-react.alkemy.org", {email,password})
         .then(response =>{
-                swAlert("Perfect!", "Logged successfully!", "success")
+            swAlert({
+                title: "Perfecto!",
+                text: "Conectado exitosamente!",
+                icon: "success",
+              });
+                // swAlert("Perfect!", "Logged successfully!", "success",{
+                //     customClass:"modal"
+                // })
                 const tokenUs = response.data.token
                 console.log(tokenUs)
                 sessionStorage.setItem("token", tokenUs)

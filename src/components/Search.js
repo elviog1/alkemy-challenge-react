@@ -21,8 +21,8 @@ export default function Search() {
     }
   return (
     <div>
-        <form className='me-5' onSubmit={handleSubmit}>
-                <div className=' d-flex'>
+        <form className=' ' onSubmit={handleSubmit}>
+                <div className=' d-flex search-div'>
                     <input className='login-input' type="search" name="search" placeholder="Buscar..." />
                     <button className='login-button' type='submit'>Send</button>
                 </div>

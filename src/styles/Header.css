@@ -1,15 +1,29 @@
 .header{
-    height: 10vh;
+    min-height: 15vh;
     background:linear-gradient(rgb(61, 62, 62),rgb(14, 14, 16));
     width: 100%;
 }
 .link{
     font-weight: bold;
     font-size: 25px;
+    display: flex;
 }
 .carrito{
     font-weight: bold;
-    font-size: 25px;
+    /* font-size: 25px; */
     text-align: center;
     align-self: center;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+.header-ul{
+    flex-wrap: wrap;
+}
+@media (max-width:320px){
+    .search-div{
+        padding: 0px;
+        gap: 5px;
+    }
+   
+
 }
