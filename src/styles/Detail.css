@@ -15,8 +15,35 @@
     text-decoration: none;
 }
 
+@media (max-width:768px){
+    .detail-img{
+        width: 100%;
+    }
+    .container-card{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:425px){
+    .detail-img{
+        width: 100%;
+    }
+    .container-card{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:375px){
+    .detail-img{
+        width: 100%;
+    }
+    .container-card{
+        flex-wrap: wrap;
+    }
+}
 @media (max-width:320px){
     .detail-img{
-        width: 320px;
+        width: 100%;
+    }
+    .container-card{
+        flex-wrap: wrap;
     }
 }

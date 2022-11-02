@@ -30,7 +30,7 @@ function DetailMovie (){
         {!detailMovie && <h2 className="text-center">Cargando...</h2>}
         {detailMovie && 
             <>
-                    <div className="container-card d-flex flex-wrap">
+                    <div className="container-card d-flex ">
                         <img className="detail-img" src={"https://image.tmdb.org/t/p/w500/"+`${detailMovie.poster_path}`} />
                         <div className="ms-3">
                             <h2 className="text-center fs-1 fw-bold">{detailMovie.title}</h2>
