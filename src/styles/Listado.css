@@ -41,3 +41,20 @@
 .card-button:hover{
     background-color: rgb(114, 190, 219);
 }
+.img1, .img2{
+    width: 18rem;
+    height: 430px;
+}
+.img1{
+    opacity: 1;
+
+}
+.img2{
+    position: absolute;
+    opacity: 1;
+    transition: .5s;
+}
+ .img2:hover{
+    opacity: 0;
+
+}

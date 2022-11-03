@@ -40,7 +40,8 @@ export default function Listado(props) {
         {movies.map((movie, index) => {
           return (
             <div className='card ' style={{ width: "18rem" }} key={index}>
-              <img className='card-img-top' src={"https://image.tmdb.org/t/p/w500/"+`${movie.poster_path}`} />
+              <img className=' img2' src={"https://image.tmdb.org/t/p/w500/"+`${movie.poster_path}`} />
+              <img className=' img1' src={"https://image.tmdb.org/t/p/w500/"+`${movie.backdrop_path}`} />
               <div className='fav-div'>
                 <button onClick={props.addOrRemoveFromFavs}
                  className='button-fav'
