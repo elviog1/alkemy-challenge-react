@@ -59,8 +59,8 @@ export default function Login() {
         <div className='login-container'>
         <form onSubmit={submitHandler}>
             <div className='login-form'>
-                <input className='login-input' type="text" name="email" placeholder="example@gmail.com" />
-                <input className='login-input' type="password" name="password" placeholder="password" />
+                <input className='login-input' type="text" name="email" placeholder="challenge@alkemy.org" />
+                <input className='login-input' type="password" name="password" placeholder="password: react" />
                 <button className='login-button' type='submit'>Send</button>
             </div>
         </form>
